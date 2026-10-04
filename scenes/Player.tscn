@@ -1,15 +1,72 @@
 [gd_scene format=3 uid="uid://c6qm610vffn7m"]
 
+[ext_resource type="Texture2D" uid="uid://c5e0mo4arp4pg" path="res://assets/Blue_Idle_Back_Up.png" id="1_mdl7e"]
 [ext_resource type="Texture2D" uid="uid://cvvwvtrije2p6" path="res://assets/Blue_Idle_Front_Down.png" id="1_p0vlq"]
+[ext_resource type="Script" uid="uid://cxkmdgfdhekht" path="res://scripts/player/Player.cs" id="1_qu4a1"]
+[ext_resource type="Texture2D" uid="uid://cl3esm760o1ya" path="res://assets/Blue_Idle_Right.png" id="3_mdl7e"]
+[ext_resource type="Texture2D" uid="uid://0qjf4afd655q" path="res://assets/Blue_Idle_Left.png" id="4_70d11"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cw2d6"]
+atlas = ExtResource("1_mdl7e")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0vlq"]
+atlas = ExtResource("1_p0vlq")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qu4a1"]
+atlas = ExtResource("3_mdl7e")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bruh7"]
+atlas = ExtResource("4_70d11")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uhhsy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cw2d6")
+}],
+"loop": 1,
+"name": &"idle_atas",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0vlq")
+}],
+"loop": 1,
+"name": &"idle_bawah",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qu4a1")
+}],
+"loop": 1,
+"name": &"idle_kanan",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bruh7")
+}],
+"loop": 1,
+"name": &"idle_kiri",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uhhsy"]
-size = Vector2(19, 29)
+size = Vector2(9, 8)
 
 [node name="Player" type="CharacterBody2D" unique_id=1881529498]
+script = ExtResource("1_qu4a1")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1983525675]
-texture = ExtResource("1_p0vlq")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=82982921]
+sprite_frames = SubResource("SpriteFrames_uhhsy")
+animation = &"idle_bawah"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=603116547]
-position = Vector2(0.5, 1.5)
+position = Vector2(0.5, 10)
 shape = SubResource("RectangleShape2D_uhhsy")
