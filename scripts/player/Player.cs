@@ -7,6 +7,27 @@ public partial class Player : CharacterBody2D
 	public override void _Ready()
 	{
 		animasi = GetNode<AnimatedSprite2D>("Sprite2D");
+		CallDeferred(nameof(SetSpawnPosition));
+	}
+
+	private void SetSpawnPosition()
+	{
+		GD.Print($"[PLAYER] Membaca TargetSpawnPoint dari GameManager: '{GameManager.TargetSpawnPoint}'");
+
+		if (!string.IsNullOrEmpty(GameManager.TargetSpawnPoint))
+		{
+			var spawnPoint = GetParent().GetNodeOrNull<Marker2D>(GameManager.TargetSpawnPoint);
+			
+			if (spawnPoint != null)
+			{
+				GlobalPosition = spawnPoint.GlobalPosition;
+				GD.Print($"[PLAYER] Berhasil pindah posisi ke: {spawnPoint.Name}");
+			}
+			else
+			{
+				GD.PrintErr($"[PLAYER] GAGAL! Marker2D '{GameManager.TargetSpawnPoint}' tidak ditemukan di {GetParent().Name}");
+			}
+		}
 	}
 
 	public override void _PhysicsProcess(double delta)
