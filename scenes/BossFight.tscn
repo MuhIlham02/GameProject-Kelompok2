@@ -11,7 +11,15 @@
 [ext_resource type="Texture2D" uid="uid://diepnkettkfgy" path="res://assets/TopDownHouse_FurnitureState2.png" id="7_a5puy"]
 [ext_resource type="Texture2D" uid="uid://dt7lhfxwr5vpd" path="res://assets/decorations_BR.png" id="8_imhps"]
 [ext_resource type="Texture2D" uid="uid://be4otmen35nfu" path="res://assets/TopDownHouse_FurnitureState1.png" id="9_8anxc"]
+[ext_resource type="Script" uid="uid://1dost0wykwve" path="res://scripts/player/BattlePlayer.cs" id="11_vcv4n"]
 [ext_resource type="PackedScene" uid="uid://cgnr4j6571xil" path="res://scenes/PauseMenu.tscn" id="12_6n1mu"]
+[ext_resource type="PackedScene" uid="uid://b3gmbayyqjtom" path="res://scenes/LightProjectile.tscn" id="12_a5puy"]
+[ext_resource type="Texture2D" uid="uid://cvvwvtrije2p6" path="res://assets/Blue_Idle_Front_Down.png" id="13_bgnyt"]
+[ext_resource type="Texture2D" uid="uid://c5e0mo4arp4pg" path="res://assets/Blue_Idle_Back_Up.png" id="14_rkgeh"]
+[ext_resource type="PackedScene" uid="uid://cldkwtcmtjtdj" path="res://scenes/ShadowEnemy.tscn" id="15_imhps"]
+[ext_resource type="Texture2D" uid="uid://0qjf4afd655q" path="res://assets/Blue_Idle_Left.png" id="15_vwme5"]
+[ext_resource type="PackedScene" uid="uid://dgyv5xmlrttbc" path="res://scenes/BattleUI.tscn" id="16_8anxc"]
+[ext_resource type="Texture2D" uid="uid://cl3esm760o1ya" path="res://assets/Blue_Idle_Right.png" id="16_vk7pc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ykko5"]
 texture = ExtResource("1_tc81p")
@@ -1508,6 +1516,11 @@ color = Color(0.35906908, 0.35906908, 0.35906908, 1)
 position = Vector2(1, 165)
 
 [node name="Player" parent="." unique_id=1881529498 instance=ExtResource("1_5hye2")]
+script = ExtResource("11_vcv4n")
+MaxHp = 6
+Speed = 160.0
+ProjectileScene = ExtResource("12_a5puy")
+CanShoot = false
 
 [node name="PointLight2D" type="PointLight2D" parent="Player" unique_id=1959324189]
 texture = SubResource("GradientTexture2D_uhhsy")
@@ -1532,3 +1545,14 @@ position = Vector2(-119.27588, 36.05716)
 shape = SubResource("RectangleShape2D_jknp3")
 
 [node name="PauseMenu" parent="." unique_id=1342471769 instance=ExtResource("12_6n1mu")]
+
+[node name="ShadowEnemy" parent="." unique_id=688319002 instance=ExtResource("15_imhps")]
+position = Vector2(0, 5)
+TextureDepan = ExtResource("13_bgnyt")
+TextureBelakang = ExtResource("14_rkgeh")
+TextureKiri = ExtResource("15_vwme5")
+TextureKanan = ExtResource("16_vk7pc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1448619106]
+
+[node name="BattleUI" parent="CanvasLayer" unique_id=872152725 instance=ExtResource("16_8anxc")]

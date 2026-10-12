@@ -1,6 +1,24 @@
 [gd_scene format=3 uid="uid://bjt15cmg0u1pb"]
 
 [ext_resource type="Script" uid="uid://cdtfaacbms348" path="res://scripts/ui/MainMenu.cs" id="1_yqorp"]
+[ext_resource type="FontFile" uid="uid://cf8cbqc8bq05j" path="res://assets/fonts/boldpixels.ttf" id="2_2wh52"]
+[ext_resource type="Texture2D" uid="uid://cr1afj63lvl5h" path="res://assets/ui/FreeHorrorUi.png" id="3_ow34m"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uj04i"]
+texture = ExtResource("3_ow34m")
+region_rect = Rect2(69.79619, 137.88918, 52.42238, 15.304352)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7h7mn"]
+texture = ExtResource("3_ow34m")
+region_rect = Rect2(5.5399895, 137.67516, 52.755, 15.469025)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l72w3"]
+texture = ExtResource("3_ow34m")
+region_rect = Rect2(69.74428, 201.89268, 52.578064, 14.907303)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ucygd"]
+texture = ExtResource("3_ow34m")
+region_rect = Rect2(5.741458, 201.76988, 52.493458, 15.370804)
 
 [node name="MainMenu" type="Control" unique_id=827710801]
 layout_mode = 3
@@ -21,31 +39,58 @@ grow_vertical = 2
 color = Color(0.15280965, 0.06739814, 0.07575851, 1)
 
 [node name="BtnPlay" type="Button" parent="." unique_id=1623427522]
+custom_minimum_size = Vector2(90, 30)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -89.0
-offset_top = -17.0
-offset_right = 89.0
-offset_bottom = 17.0
+offset_left = -93.0
+offset_top = -41.0
+offset_right = 91.0
+offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "PLAY"
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_2wh52")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_uj04i")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7h7mn")
 
 [node name="BtnQuit" type="Button" parent="." unique_id=1900253953]
+custom_minimum_size = Vector2(90, 30)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -88.0
-offset_top = 43.0
-offset_right = 90.0
-offset_bottom = 77.0
+offset_left = -91.0
+offset_top = 49.0
+offset_right = 87.0
+offset_bottom = 106.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "QUIT"
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_l72w3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ucygd")
+
+[node name="BoardMenu" type="TextureRect" parent="." unique_id=463063825]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="." unique_id=1075144107]
+layout_mode = 0
+offset_left = 295.0
+offset_top = 188.0
+offset_right = 874.0
+offset_bottom = 271.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("2_2wh52")
+theme_override_font_sizes/font_size = 60
+text = "BEHIND THE DOOR"
+horizontal_alignment = 1

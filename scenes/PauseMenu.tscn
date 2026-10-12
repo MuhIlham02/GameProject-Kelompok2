@@ -1,9 +1,36 @@
 [gd_scene format=3 uid="uid://cgnr4j6571xil"]
 
 [ext_resource type="Script" uid="uid://c002xa681u46h" path="res://scripts/ui/PauseMenu.cs" id="1_jvnd5"]
+[ext_resource type="FontFile" uid="uid://cf8cbqc8bq05j" path="res://assets/fonts/boldpixels.ttf" id="2_komsw"]
+[ext_resource type="Texture2D" uid="uid://cr1afj63lvl5h" path="res://assets/ui/FreeHorrorUi.png" id="3_5w6ei"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ow34m"]
+texture = ExtResource("3_5w6ei")
+region_rect = Rect2(69.78729, 233.82251, 52.468445, 15.276108)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_826wr"]
+texture = ExtResource("3_5w6ei")
+region_rect = Rect2(5.7920647, 233.84142, 52.35447, 15.215347)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2nypq"]
+texture = ExtResource("3_5w6ei")
+region_rect = Rect2(69.98107, 233.85008, 52.08792, 15.17691)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l4mxc"]
+texture = ExtResource("3_5w6ei")
+region_rect = Rect2(5.641015, 233.92499, 52.35555, 15.104767)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ptake"]
+texture = ExtResource("3_5w6ei")
+region_rect = Rect2(69.97063, 233.98817, 52.045418, 15.0456085)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jiu6o"]
+texture = ExtResource("3_5w6ei")
+region_rect = Rect2(5.974866, 233.96268, 52.03868, 15.05954)
 
 [node name="PauseMenu" type="CanvasLayer" unique_id=1342471769]
 process_mode = 2
+layer = 10
 script = ExtResource("1_jvnd5")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1025247306]
@@ -29,13 +56,32 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="BtnResume" type="Button" parent="VBoxContainer" unique_id=2101516124]
+custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
-text = "Resume"
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_komsw")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_ow34m")
+theme_override_styles/hover = SubResource("StyleBoxTexture_826wr")
+text = "RESUME
+"
 
 [node name="BtnSettings" type="Button" parent="VBoxContainer" unique_id=1897633002]
+custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
-text = "Settings"
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_komsw")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_2nypq")
+theme_override_styles/hover = SubResource("StyleBoxTexture_l4mxc")
+text = "SETIINGS"
 
 [node name="BtnQuit" type="Button" parent="VBoxContainer" unique_id=1093614723]
+custom_minimum_size = Vector2(100, 40)
 layout_mode = 2
-text = "Quit"
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_komsw")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_ptake")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jiu6o")
+text = "QUIT"

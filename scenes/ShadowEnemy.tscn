@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cldkwtcmtjtdj"]
+
+[ext_resource type="Script" uid="uid://etf1t7l3fc4l" path="res://scripts/shadow/ShadowEnemy.cs" id="1_iqfea"]
+[ext_resource type="Texture2D" uid="uid://cvvwvtrije2p6" path="res://assets/Blue_Idle_Front_Down.png" id="1_tlif6"]
+[ext_resource type="PackedScene" uid="uid://b3gmbayyqjtom" path="res://scenes/LightProjectile.tscn" id="2_v8dsn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uj04i"]
+radius = 12.0
+
+[node name="ShadowEnemy" type="CharacterBody2D" unique_id=688319002]
+script = ExtResource("1_iqfea")
+ProjectileScene = ExtResource("2_v8dsn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=619339197]
+modulate = Color(0.27853766, 0.20318091, 0.3644364, 1)
+texture = ExtResource("1_tlif6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2010517583]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_uj04i")
