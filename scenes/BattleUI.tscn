@@ -1,0 +1,189 @@
+[gd_scene format=3 uid="uid://dgyv5xmlrttbc"]
+
+[ext_resource type="Script" uid="uid://betwbpax1ewrb" path="res://scripts/ui/BattleUI.cs" id="1_d17lq"]
+[ext_resource type="Texture2D" uid="uid://cv318p1dohrr3" path="res://assets/ui/empty_bar.png" id="2_3r5je"]
+[ext_resource type="FontFile" uid="uid://cf8cbqc8bq05j" path="res://assets/fonts/boldpixels.ttf" id="2_ld35s"]
+[ext_resource type="Texture2D" uid="uid://bwkfhin0qa23e" path="res://assets/ui/health_bar.png" id="3_ld35s"]
+[ext_resource type="Texture2D" uid="uid://lbdwa3kswylp" path="res://assets/ui/energy_bar.png" id="4_yejgv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5viw"]
+atlas = ExtResource("2_3r5je")
+region = Rect2(0, 0, 98, 16.015493)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jc63w"]
+atlas = ExtResource("3_ld35s")
+region = Rect2(0, 0, 98, 16.028524)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7h7mn"]
+atlas = ExtResource("2_3r5je")
+region = Rect2(0, 0, 98, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vpupq"]
+atlas = ExtResource("4_yejgv")
+region = Rect2(0, 0, 98, 16)
+
+[node name="BattleUI" type="Control" unique_id=872152725]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_d17lq")
+metadata/_edit_use_anchors_ = true
+
+[node name="GameOverPanel" type="Panel" parent="." unique_id=538084518]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="GameOverPanel" unique_id=1291656264]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -305.5
+offset_top = -168.5
+offset_right = 305.5
+offset_bottom = 168.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07762881, 0.07762883, 0.07762877, 0.50980395)
+
+[node name="GAME OVER" type="Label" parent="GameOverPanel" unique_id=1455439261]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.75
+offset_top = -61.0
+offset_right = 162.75
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_ld35s")
+theme_override_font_sizes/font_size = 40
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnRestart" type="Button" parent="GameOverPanel" unique_id=798516396]
+layout_mode = 0
+offset_left = -59.0
+offset_top = 26.0
+offset_right = 61.0
+offset_bottom = 66.0
+theme_override_fonts/font = ExtResource("2_ld35s")
+theme_override_font_sizes/font_size = 20
+text = "RESTART"
+
+[node name="WinPanel" type="Panel" parent="." unique_id=964912081]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="WinPanel" unique_id=1939173406]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -305.5
+offset_top = -168.5
+offset_right = 305.5
+offset_bottom = 168.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07762881, 0.07762883, 0.07762877, 0.50980395)
+
+[node name="label" type="Label" parent="WinPanel" unique_id=217871502]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.0
+offset_top = -133.0
+offset_right = 213.0
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_ld35s")
+theme_override_font_sizes/font_size = 25
+text = "Selamat!
+Anda berhasil mengalahkan bayangan 
+Anda sendiri!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BtnRestart" type="Button" parent="WinPanel" unique_id=996018680]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = 26.0
+offset_right = 63.0
+offset_bottom = 66.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_ld35s")
+theme_override_font_sizes/font_size = 20
+text = "MAIN LAGI"
+
+[node name="EnemyHpBar" type="TextureProgressBar" parent="." unique_id=791331126]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.019965278
+anchor_top = 0.032407407
+anchor_right = 0.19010417
+anchor_bottom = 0.1558642
+offset_right = -98.0
+offset_bottom = -40.0
+scale = Vector2(2, 2)
+max_value = 6.0
+value = 6.0
+texture_under = SubResource("AtlasTexture_p5viw")
+texture_progress = SubResource("AtlasTexture_jc63w")
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerHpBar" type="TextureProgressBar" parent="." unique_id=182116190]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8142361
+anchor_top = 0.91820985
+anchor_right = 0.984375
+anchor_bottom = 1.0416666
+offset_right = -98.0
+offset_bottom = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(2, 2)
+max_value = 6.0
+value = 6.0
+texture_under = SubResource("AtlasTexture_7h7mn")
+texture_progress = SubResource("AtlasTexture_vpupq")
+metadata/_edit_use_anchors_ = true

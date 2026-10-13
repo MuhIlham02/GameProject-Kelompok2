@@ -1522,6 +1522,7 @@ tile_set = SubResource("TileSet_8m8wf")
 color = Color(0.35906908, 0.35906908, 0.35906908, 1)
 
 [node name="Player" parent="." unique_id=1881529498 instance=ExtResource("10_fyksq")]
+position = Vector2(259, 143)
 
 [node name="PointLight2D" type="PointLight2D" parent="Player" unique_id=1959324189]
 texture = SubResource("GradientTexture2D_uhhsy")

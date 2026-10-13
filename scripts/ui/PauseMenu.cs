@@ -8,7 +8,6 @@ public partial class PauseMenu : CanvasLayer
 
 	public override void _Ready()
 	{
-		// Memastikan skrip ini SELALU berjalan meski game di-pause
 		ProcessMode = ProcessModeEnum.Always;
 
 		_btnResume = GetNode<Button>("VBoxContainer/BtnResume");
@@ -24,8 +23,7 @@ public partial class PauseMenu : CanvasLayer
 
 	public override void _Process(double delta)
 	{
-		// Deteksi tombol Escape saat bermain
-		if (Input.IsActionJustPressed("pause") || Input.IsKeyPressed(Key.Escape))
+		if (Input.IsActionJustPressed("pause") || Input.IsActionJustPressed("ui_cancel"))
 		{
 			GetViewport().SetInputAsHandled();
 			TogglePause();
@@ -60,7 +58,6 @@ public partial class PauseMenu : CanvasLayer
 
 	private void OnQuitPressed()
 	{
-		// Unpause game terlebih dahulu sebelum kembali ke Main Menu
 		GetTree().Paused = false;
 		GetTree().ChangeSceneToFile("res://scenes/MainMenu.tscn");
 	}
